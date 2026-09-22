@@ -50,4 +50,4 @@ qmllint -I "$OMARCHY_PATH/shell" Service.qml
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+GNU General Public License v3.0 only. See [LICENSE](LICENSE).

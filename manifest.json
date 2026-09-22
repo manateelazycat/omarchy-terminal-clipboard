@@ -4,7 +4,7 @@
   "name": "Omarchy Terminal Clipboard",
   "version": "0.1.0",
   "author": "ManateeLazyCat",
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "description": "Makes Omarchy's Super+C and Super+V shortcuts work consistently across regular applications, terminals, Lazycat Terminal, and LightOS.",
   "kinds": [
     "service"
