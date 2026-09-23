@@ -17,7 +17,7 @@ Item {
   function clipboardHelpers() {
     return [
       'local function send_shortcut_once(mods, key) hl.dispatch(hl.dsp.send_key_state({ mods = mods, key = key, state = "down" })); hl.timer(function() hl.dispatch(hl.dsp.send_key_state({ mods = mods, key = key, state = "up" })) end, { timeout = 50, type = "oneshot" }) end',
-      'local function uses_ctrl_shift_clipboard(window) if not window then return false end; local initial_title = window.initial_title or ""; return window.class == "com.lazycat.terminal" or initial_title:match("^cloud%.lazycat%.lightos") ~= nil end',
+      'local function uses_ctrl_shift_clipboard(window) if not window then return false end; local initial_title = window.initial_title or ""; local title = window.title or ""; return window.class == "com.lazycat.terminal" or initial_title:match("^cloud%.lazycat%.lightos") ~= nil or (window.class == "lzc-client-desktop" and title:find("LightOS WebShell", 1, true) ~= nil) end',
       'local function is_tagged_terminal(window) if not window then return false end; for _, tag in ipairs(window.tags or {}) do if tag:gsub("%*$", "") == "terminal" then return true end end; return false end',
       'local function clipboard_shortcut(default_mods, default_key, terminal_mods, terminal_key) return function() local window = hl.get_active_window(); if uses_ctrl_shift_clipboard(window) then send_shortcut_once("CTRL SHIFT", default_key) elseif is_tagged_terminal(window) then send_shortcut_once(terminal_mods, terminal_key) else send_shortcut_once(default_mods, default_key) end end end'
     ];
@@ -78,7 +78,8 @@ Item {
     return JSON.stringify({
       applied: root.applied,
       lazycatTerminalClass: "com.lazycat.terminal",
-      lightosInitialTitlePrefix: "cloud.lazycat.lightos"
+      lightosInitialTitlePrefix: "cloud.lazycat.lightos",
+      lightosWebShellTitleFragment: "LightOS WebShell"
     });
   }
 

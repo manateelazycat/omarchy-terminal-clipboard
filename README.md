@@ -17,11 +17,11 @@ No additional configuration is required.
 | Active window | `Super+C` sends | `Super+V` sends |
 | --- | --- | --- |
 | Lazycat Terminal (`class = com.lazycat.terminal`) | `Ctrl+Shift+C` | `Ctrl+Shift+V` |
-| LightOS (`initial_title` starts with `cloud.lazycat.lightos`) | `Ctrl+Shift+C` | `Ctrl+Shift+V` |
+| LightOS (`initial_title` starts with `cloud.lazycat.lightos`, or a `lzc-client-desktop` window title contains `LightOS WebShell`) | `Ctrl+Shift+C` | `Ctrl+Shift+V` |
 | Terminal recognized by Omarchy | `Ctrl+Insert` | `Shift+Insert` |
 | Other application | `Ctrl+C` | `Ctrl+V` |
 
-The LightOS match deliberately ignores the user-specific domain suffix. Runtime bindings are reapplied automatically after a Hyprland configuration reload.
+The LightOS match covers both the domain-style title and LightOS WebShell windows whose initial title is `LightOS container Manager` followed by a user-specific suffix. Runtime bindings are reapplied automatically after a Hyprland configuration reload.
 
 ## Status
 

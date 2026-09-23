@@ -14,9 +14,10 @@ test("manifest exposes a persistent service", () => {
   assert.equal(manifest.entryPoints.service, "Service.qml");
 });
 
-test("Lazycat Terminal and every LightOS user domain use Ctrl+Shift+C/V", () => {
+test("Lazycat Terminal, LightOS domains, and LightOS WebShell use Ctrl+Shift+C/V", () => {
   assert.equal(service.includes('window.class == "com.lazycat.terminal"'), true);
   assert.equal(service.includes('initial_title:match("^cloud%.lazycat%.lightos")'), true);
+  assert.equal(service.includes('window.class == "lzc-client-desktop" and title:find("LightOS WebShell", 1, true)'), true);
   assert.equal(service.includes('send_shortcut_once("CTRL SHIFT", default_key)'), true);
 });
 
