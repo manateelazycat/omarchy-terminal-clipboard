@@ -1,5 +1,7 @@
 # Omarchy Terminal Clipboard
 
+English | [简体中文](README.zh-CN.md)
+
 ![Omarchy Terminal Clipboard](preview.png)
 
 An [Omarchy](https://omarchy.org/) plugin that makes `Super+C` and `Super+V` work consistently across regular applications, terminals, Lazycat Terminal, and LightOS by sending the appropriate copy and paste key combinations for each window.
